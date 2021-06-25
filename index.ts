@@ -1,6 +1,6 @@
-const express = require("express");
+import express from "express";
 const app = express();
-const bodyParser = require("body-parser");
+import bodyParser from "body-parser";
 require("dotenv").config();
 const Router = require("./routes/api");
 
@@ -12,3 +12,6 @@ app.use("/api", Router); // Use the router
 app.listen(process.env.PORT, async () =>
     console.log("App is running on: http://localhost:" + process.env.PORT)
 );
+app.get('/', (req, res) => {
+    res.send('The sedulous hyena ate the antelope!');
+});
